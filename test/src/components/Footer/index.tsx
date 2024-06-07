@@ -1,11 +1,11 @@
 import { Logo } from "../Logo";
-import s from "./Footer.module.scss";
+import style from "./Footer.module.scss";
 
 export const Footer = () => {
   return (
-    <div className={s.wrapper}>
+    <div className={style.wrapper}>
       <Logo />
-      <div className={s.copy}>@copyright 2023 all right reserved</div>
+      <div className={style.copy}>@copyright 2023 all right reserved</div>
     </div>
   );
 };

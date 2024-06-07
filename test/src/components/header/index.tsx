@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import './header.scss'
+import style from './Header.module.scss'
 import {Languages, LocalStorageKeys} from "../../types/enums.ts";
 import {Logo} from "../Logo";
 
@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
         setLanguage(newValue);
     }
     return (
-        <div className={'container'}>
+        <div className={style.wrapper}>
             <Logo />
             <div className={'hero'}>hero</div>
             <select value={language} onChange={handleOnChange} className={'language'}>

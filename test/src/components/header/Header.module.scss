@@ -1,11 +1,12 @@
-.container {
+.wrapper {
   display: flex;
   position: fixed;
   height: 40px;
   width: 100vw;
   top: 0;
   left: 0;
-  justify-content: space-around;
+  padding: 0 20px;
+  justify-content: space-between;
   align-items: center;
   background-color: #9C29B2;
 }

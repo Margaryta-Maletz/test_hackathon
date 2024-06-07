@@ -1,9 +1,9 @@
 import {Dictionary} from './type.ts';
 
 export const dictionary: Dictionary = {
-    welcome: 'Hi',
+    welcome: 'Hi! Click me if you speak English)',
     name: 'What is your name?',
-    age: 'Сколько тебе лет',
-    teacher: 'С кем ты хочешь поиграть',
-    question: 'Интересный факт о…',
+    age: 'How old are you?',
+    teacher: 'Who do you want to play with?',
+    question: 'Interesting fact about...',
 }
