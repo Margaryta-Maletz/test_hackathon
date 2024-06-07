@@ -1,0 +1,11 @@
+.wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .test {
+    width: 200px;
+    height: 300px;
+  }
+}
