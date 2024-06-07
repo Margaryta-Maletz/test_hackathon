@@ -1,5 +1,7 @@
+import { useDictionary } from "../../hooks/useDictionary";
 import s from "./Main.module.scss";
 
 export const Main = () => {
-  return <div className={s.wrapper}>index</div>;
+  const { welcome } = useDictionary();
+  return <div className={s.wrapper}>{welcome}</div>;
 };

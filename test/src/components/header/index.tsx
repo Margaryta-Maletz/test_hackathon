@@ -1,27 +1,30 @@
-import React, {useEffect, useState} from "react";
-import style from './Header.module.scss'
-import {Languages, LocalStorageKeys} from "../../types/enums.ts";
-import {Logo} from "../Logo";
+import React, { useContext } from "react";
+import style from "./Header.module.scss";
+import { Languages } from "../../types/enums.ts";
+import { Logo } from "../Logo";
+import { LanguageContext } from "../../providers/Language/index.tsx";
+import { isLanguage } from "../../utils/typeguards/isLanguage.ts";
 
 export const Header: React.FC = () => {
-    const [language, setLanguage] = useState('');
+  const { lang, setLang } = useContext(LanguageContext);
 
-    useEffect(() => {
-        setLanguage(localStorage.getItem(LocalStorageKeys.language) || '');
-    }, []);
-
-    const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>)  => {
-        const newValue = event.target.value;
-        localStorage.setItem(LocalStorageKeys.language, newValue);
-        setLanguage(newValue);
+  const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newValue = event.target.value;
+    if (isLanguage(newValue)) {
+      setLang(newValue);
     }
-    return (
-        <div className={style.wrapper}>
-            <Logo />
-            <div className={'hero'}>hero</div>
-            <select value={language} onChange={handleOnChange} className={'language'}>
-                {Object.keys(Languages).map((key) => <option value={key}>{key}</option>)}
-            </select>
-        </div>
-    )
-}
+  };
+  return (
+    <div className={style.wrapper}>
+      <Logo />
+      <div className={"hero"}>hero</div>
+      <select value={lang} onChange={handleOnChange} className={"language"}>
+        {Object.keys(Languages).map((key) => (
+          <option key={key} value={key}>
+            {key}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
