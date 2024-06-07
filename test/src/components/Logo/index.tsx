@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import React, { HTMLAttributes } from "react";
 import s from "./Logo.module.scss";
 import clsx from "clsx";
 
