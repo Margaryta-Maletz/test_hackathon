@@ -17,9 +17,7 @@ type LanguageContextType = {
 
 const defaultValue: LanguageContextType = {
   lang: "EN",
-  setLang: (lang) => {
-    console.log(lang);
-  },
+  setLang: () => {},
 };
 
 export const LanguageContext = createContext(defaultValue);

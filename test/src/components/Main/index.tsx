@@ -1,7 +1,14 @@
-import { useDictionary } from "../../hooks/useDictionary";
 import s from "./Main.module.scss";
+import {Welcome} from "../Welcome";
+import {useState} from "react";
+import {useDictionary} from "../../hooks/useDictionary.ts";
 
 export const Main = () => {
   const { welcome } = useDictionary();
-  return <div className={s.wrapper}>{welcome}</div>;
+const [isWelcome, setIsWelcome] = useState(true)
+  return <div className={s.wrapper}>
+    {
+      isWelcome ?     <Welcome setIsWelcome={setIsWelcome}/> : welcome
+    }
+</div>;
 };
