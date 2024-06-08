@@ -37,18 +37,6 @@ export const Chat: React.FC<ChatProps> = ({ setIsShowHero, increaseScore }) => {
     setStep(step + 1);
   };
 
-    const handleOnChange = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (event.code === 'Enter' || event.code === 'NumpadEnter') {
-            switch (step) {
-                case 1: localStorage.setItem(LocalStorageKeys.name, (event.target as HTMLInputElement).value); break;
-                case 2: localStorage.setItem(LocalStorageKeys.age, (event.target as HTMLInputElement).value);break;
-                case 3: localStorage.setItem(LocalStorageKeys.teacher, (event.target as HTMLInputElement).value); setIsShowHero(true); break;
-                default: localStorage.setItem(LocalStorageKeys.answer, (event.target as HTMLInputElement).value); increaseScore();
-            }
-
-            (event.target as HTMLInputElement).value = '';
-            setStep(step + 1)
-        }
   const handleOnChange = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.code === "Enter" || event.code === "NumpadEnter") {
       switch (step) {
