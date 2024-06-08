@@ -1,8 +1,9 @@
 export enum LocalStorageKeys {
   language = "language",
-  name = "kid-name",
-  age = "kid-age",
+  name = "name",
+  age = "age",
   teacher = "teacher",
+  answer = "answer",
   teacherImg = "teacher-img",
 }
 

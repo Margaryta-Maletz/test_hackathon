@@ -4,5 +4,6 @@
     border: 2px black solid;
     padding: 4px;
     justify-content: flex-end;
-    width: 400px;
+    flex: 0 0 100%;
+    width: 100%;
 }
