@@ -1,12 +1,12 @@
 .wrapper {
-  display: flex;
-  gap: 50px;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 20% 1fr 20%;
+  align-items: flex-end;
+  padding: 20px;
 
   .pig {
     width: 200px;
     height: 300px;
   }
-
 }

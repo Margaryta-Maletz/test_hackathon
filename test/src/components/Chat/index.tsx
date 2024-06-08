@@ -1,6 +1,7 @@
 import React, {KeyboardEvent, useState} from "react";
 import {useDictionary} from "../../hooks/useDictionary.ts";
 import style from './Chat.module.css';
+import {LocalStorageKeys} from "../../types/enums.ts";
 
 type ChatProps = {
     setIsShowHero: (val: boolean) => void;
@@ -20,10 +21,10 @@ export const Chat: React.FC<ChatProps> = ({setIsShowHero, increaseScore}) => {
     const handleOnChange = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.code === 'Enter' || event.code === 'NumpadEnter') {
             switch (step) {
-                case 1: localStorage.setItem('name', (event.target as HTMLInputElement).value); break;
-                case 2: localStorage.setItem('age', (event.target as HTMLInputElement).value);break;
-                case 3: localStorage.setItem('teacher', (event.target as HTMLInputElement).value); setIsShowHero(true); break;
-                default: localStorage.setItem('answer', (event.target as HTMLInputElement).value); increaseScore();
+                case 1: localStorage.setItem(LocalStorageKeys.name, (event.target as HTMLInputElement).value); break;
+                case 2: localStorage.setItem(LocalStorageKeys.age, (event.target as HTMLInputElement).value);break;
+                case 3: localStorage.setItem(LocalStorageKeys.teacher, (event.target as HTMLInputElement).value); setIsShowHero(true); break;
+                default: localStorage.setItem(LocalStorageKeys.answer, (event.target as HTMLInputElement).value); increaseScore();
             }
 
             (event.target as HTMLInputElement).value = '';
