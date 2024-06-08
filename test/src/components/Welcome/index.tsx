@@ -25,11 +25,26 @@ export const Welcome: React.FC<WelcomeProp> = ({setIsWelcome}) => {
     }
     return (
         <div className={style.wrapper} onClick={handlerOnClick}>
-            <div id={Languages.EN} className={clsx(style.element, style.en)}>{en.welcome}</div>
-            <div id={Languages.RU} className={clsx(style.element, style.ru)}>{ru.welcome}</div>
-            <div id={Languages.UK} className={clsx(style.element, style.uk)}>{uk.welcome}</div>
-            <div id={Languages.ES} className={clsx(style.element, style.es)}>{es.welcome}</div>
-            <div id={Languages.PL} className={clsx(style.element, style.pl)}>{pl.welcome}</div>
+            <div id={Languages.EN} className={clsx(style.element, style.en)}>
+                <img src="usa.png" alt={Languages.EN} height={50}/>
+                {en.welcome}
+            </div>
+            <div id={Languages.UK} className={clsx(style.element, style.uk)}>
+                <img src="ukraine.png" alt={Languages.UK} height={50}/>
+                {uk.welcome}
+            </div>
+            <div id={Languages.ES} className={clsx(style.element, style.es)}>
+                <img src="spain.png" alt={Languages.ES} height={50}/>
+                {es.welcome}
+            </div>
+            <div id={Languages.RU} className={clsx(style.element, style.ru)}>
+                <img src="russia.png" alt={Languages.RU} height={50}/>
+                {ru.welcome}
+            </div>
+            <div id={Languages.PL} className={clsx(style.element, style.pl)}>
+                <img src="poland.png" alt={Languages.PL} height={50}/>
+                {pl.welcome}
+            </div>
         </div>
     )
 }
