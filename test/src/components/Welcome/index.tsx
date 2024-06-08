@@ -29,6 +29,7 @@ export const Welcome: React.FC<WelcomeProp> = ({ setIsWelcome }) => {
 
   useEffect(() => {
     const name = localStorage.getItem(LocalStorageKeys.name);
+
     if (name) {
       setIsFamiliar(true);
     }

@@ -1,0 +1,31 @@
+.popup {
+  width: 500px;
+  max-width: 100vw;
+  height: 700px;
+  padding: 10px;
+  background: var(--accent-purple);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  &__title {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 38px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
