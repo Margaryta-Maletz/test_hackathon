@@ -7,6 +7,7 @@ export const getStorageUserData = () => {
     age: null,
     teacher: null,
     answer: null,
+    score: null,
     teacherImg: null,
   };
   Object.values(LocalStorageKeys).map((key) => {

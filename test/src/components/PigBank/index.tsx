@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, useRef } from "react";
+import {FC, HTMLAttributes, useEffect, useRef} from "react";
 import { Coin } from "./Coin";
 import style from "./PigBank.module.scss";
 import imgUrl from "./pig.webp";
@@ -11,6 +11,8 @@ type PigBankProp = HTMLAttributes<HTMLDivElement> & {
 export const PigBank: FC<PigBankProp> = ({ isAnimated, setIsAnimated }) => {
   const coinRef = useRef<SVGSVGElement>(null);
   const pigRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => { isAnimated && startAnimation()}, [isAnimated])
 
   const startShake = () => {
     pigRef.current?.classList.add(style.shake);
