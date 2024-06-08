@@ -5,14 +5,17 @@ import {PigBank} from "../PigBank";
 
 export const Game: React.FC = () => {
     const [isAnimated, setIsAnimated] = useState(false);
+    const [isShowHero, setIsShowHero] = useState(false);
+    const [score, setScore] = useState(0);
 
+    const increaseScore = () => setScore(score + 1);
     return (
         <div className={style.wrapper}>
-            <div className={style.hero}>?</div>
-            <div className={style.chat}><Chat /></div>
-            <div className={style.pig}>
+            {isShowHero ? <div className={style.hero}><img src="cheburashka.jpg" alt=""/></div> : null}
+            <div className={style.chat}><Chat setIsShowHero={setIsShowHero} increaseScore={increaseScore} /></div>
+            {score > 0 ? <div className={style.pig}>
                 <PigBank isAnimated={isAnimated} setIsAnimated={setIsAnimated} />
-            </div>
+            </div> : null}
         </div>
     )
 }
