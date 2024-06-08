@@ -1,29 +1,27 @@
 .wrapper {
-  display: grid;
-  position: fixed;
-  top: 40px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 40px;
 }
 
 .element {
-  position: relative;
-  display: inline-block;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 10px;
-  width: 200px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  width: 210px;
+  height: 150px;
+  padding-top: 50px;
+  background-image: url('cloud.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-color-dark);
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-    border-width: 10px 10px 0;
-    border-style: solid;
-    border-color: #f9f9f9 transparent;
-    display: block;
-    width: 0;
+  &:hover {
+    cursor: pointer;
+    background-image: url('cloud_hover.svg');
+    color: var(--text-color);
   }
 }

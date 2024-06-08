@@ -1,6 +1,12 @@
 .wrapper {
-  flex: 1 1 auto;
   display: flex;
+  gap: 50px;
   justify-content: center;
   align-items: center;
+
+  .pig {
+    width: 200px;
+    height: 300px;
+  }
+
 }

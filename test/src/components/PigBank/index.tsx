@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes, useRef } from "react";
 import { Coin } from "./Coin";
-import s from "./PigBank.module.scss";
+import style from "./PigBank.module.scss";
 import imgUrl from "./pig.webp";
 
 type PigBankProp = HTMLAttributes<HTMLDivElement> & {
@@ -13,12 +13,12 @@ export const PigBank: FC<PigBankProp> = ({ isAnimated, setIsAnimated }) => {
   const pigRef = useRef<HTMLImageElement>(null);
 
   const startShake = () => {
-    pigRef.current?.classList.add(s.shake);
-    coinRef.current?.classList.remove(s.drop);
+    pigRef.current?.classList.add(style.shake);
+    coinRef.current?.classList.remove(style.drop);
   };
 
   const stopShake = () => {
-    pigRef.current?.classList.remove(s.shake);
+    pigRef.current?.classList.remove(style.shake);
     setIsAnimated(false);
   };
 
@@ -35,7 +35,7 @@ export const PigBank: FC<PigBankProp> = ({ isAnimated, setIsAnimated }) => {
       return;
     }
 
-    coinRef.current.classList.add(s.drop);
+    coinRef.current.classList.add(style.drop);
     coinRef.current.addEventListener("animationend", startShake, {
       once: true,
     });
@@ -47,10 +47,10 @@ export const PigBank: FC<PigBankProp> = ({ isAnimated, setIsAnimated }) => {
   }
 
   return (
-    <div onClick={() => startAnimation()} className={s.wrapper}>
-      <Coin ref={coinRef} className={s.coin} />
-      <div className={s["pig-wrapper"]}>
-        <img ref={pigRef} className={s.pig} src={imgUrl} alt="Pig bank" />
+    <div onClick={() => startAnimation()} className={style.wrapper}>
+      <Coin ref={coinRef} className={style.coin} />
+      <div className={style["pig-wrapper"]}>
+        <img ref={pigRef} className={style.pig} src={imgUrl} alt="Pig bank" />
       </div>
     </div>
   );

@@ -1,0 +1,8 @@
+.wrapper {
+    display: flex;
+    gap: 10px;
+    border: 2px black solid;
+    padding: 4px;
+    justify-content: flex-end;
+    width: 400px;
+}
